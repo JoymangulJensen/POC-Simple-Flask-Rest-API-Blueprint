@@ -225,4 +225,4 @@ config.py
 
 *.pyc
 
-/vscode
+.vscode
