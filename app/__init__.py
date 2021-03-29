@@ -26,7 +26,4 @@ def create_app(config):
     app.register_blueprint(patient_blueprint)
     app.register_blueprint(experience_blueprint)
     app.register_blueprint(co2_blueprint)
- 
-
-    app.register_blueprint(noise_blueprint)
     return app
