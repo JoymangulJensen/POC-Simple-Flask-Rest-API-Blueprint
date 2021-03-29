@@ -2,11 +2,11 @@
 from flask import jsonify
 from flask_api import status
 
-from noise import noise_blueprint
-from noise.models import Noise
+from humidity import humidity_blueprint
+from humidity.models import Humidity
 
 
-@noise_blueprint.route('')
-def get_noises():
-    pressures = Noise.query.all()
+@humidity_blueprint.route('')
+def get_humiditys():
+    pressures = Humidity.query.all()
     return jsonify(pressures), status.HTTP_200_OK
