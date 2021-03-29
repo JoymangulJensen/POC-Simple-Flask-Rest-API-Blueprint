@@ -18,6 +18,8 @@ def create_app(config):
 
     from noise import noise_blueprint
     from patient import patient_blueprint, experience_blueprint
+    from humidity import humidity_blueprint
+    app.register_blueprint(humidity_blueprint)
 
     app.register_blueprint(noise_blueprint)
     app.register_blueprint(patient_blueprint)
