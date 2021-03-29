@@ -17,7 +17,10 @@ def create_app(config):
     db.init_app(app)
 
     from noise import noise_blueprint
+    from patient import patient_blueprint, experience_blueprint
 
     app.register_blueprint(noise_blueprint)
+    app.register_blueprint(patient_blueprint)
+    app.register_blueprint(experience_blueprint)
 
     return app
