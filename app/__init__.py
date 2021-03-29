@@ -13,17 +13,22 @@ def create_app(config):
     app.config.from_object(config)
     app.json_encoder = CustomJSONEncoder
 
+    
+    
+    db.init_app(app)
+    
     from noise import noise_blueprint
     from co2 import co2_blueprint
     from humidity import humidity_blueprint
     from patient import patient_blueprint, experience_blueprint
-    
-    db.init_app(app)
+    from temperature import temperature_blueprint
 
-        
+   
+    app.register_blueprint(temperature_blueprint)
     app.register_blueprint(humidity_blueprint)
     app.register_blueprint(noise_blueprint)
     app.register_blueprint(patient_blueprint)
     app.register_blueprint(experience_blueprint)
     app.register_blueprint(co2_blueprint)
+    
     return app
