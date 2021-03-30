@@ -1,8 +1,10 @@
 from app.utils import CustomJSONEncoder
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_pymongo import PyMongo
 
 db = SQLAlchemy()
+mongo = PyMongo()
 
 # application factory
 def create_app(config):

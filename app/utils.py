@@ -9,6 +9,8 @@ class CustomJSONEncoder(JSONEncoder):
                 return obj.isoformat()
             elif isinstance(obj, time):
                 return obj.isoformat()
+            elif isinstance(obj, bson.objectid.ObjectId):
+                return str(obj)
             iterable = iter(obj)
         except TypeError:
             pass
