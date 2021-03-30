@@ -15,7 +15,8 @@ class Humidity(db.Model):
     measure_time:  datetime.time
     creation_date: datetime.date
     creation_time: datetime.time
-
+    experience_id: int
+    materiel_id: int
 
     humidity_id = db.Column(db.Integer(), primary_key=True)
     humidity_lib = db.Column(db.String())
@@ -25,3 +26,5 @@ class Humidity(db.Model):
     measure_time = db.Column(db.Time())
     creation_date = db.Column(db.Date())
     creation_time = db.Column(db.Time())
+    experience_id = db.Column(db.Integer())
+    materiel_id= db.Column(db.Integer())
