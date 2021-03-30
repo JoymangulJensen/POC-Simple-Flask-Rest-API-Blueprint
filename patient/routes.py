@@ -19,7 +19,7 @@ def get_patient(id):
 
 
 
-@experience_blueprint.route('/')
+@experience_blueprint.route('')
 def get_experiences():
     experiences=PatientExperience.query.all()
     return jsonify(experiences), status.HTTP_200_OK
@@ -28,4 +28,3 @@ def get_experiences():
 def get_patient_experience(id):
     ex = PatientExperience.query.join(Patient, PatientExperience.trc_patient_id==Patient.trc_patient_id)
     return jsonify(ex), status.HTTP_200_OK
-
