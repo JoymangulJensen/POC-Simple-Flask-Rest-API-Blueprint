@@ -28,6 +28,7 @@ def create_app(config):
     app.register_blueprint(temperature_blueprint)
     app.register_blueprint(humidity_blueprint)
     app.register_blueprint(patient_blueprint)
+    app.register_blueprint(co2_blueprint)
 
 
     return app
